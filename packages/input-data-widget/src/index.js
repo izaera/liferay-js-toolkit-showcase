@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import AppComponent from './AppComponent';
+
 /**
  * This is the main entry point of the portlet.
  *
@@ -12,4 +17,14 @@ export default function main({
 	contextPath,
 	portletElementId,
 	configuration,
-}) {}
+}) {
+	ReactDOM.render(
+		<AppComponent
+			portletNamespace={portletNamespace}
+			contextPath={contextPath}
+			portletElementId={portletElementId}
+			configuration={configuration}
+		/>,
+		document.getElementById(portletElementId)
+	);
+}
