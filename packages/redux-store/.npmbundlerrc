@@ -6,5 +6,5 @@
 			"web-context": "/redux-store"
 		}
 	},
-	"dump-report": true
+	"dump-report": false
 }
