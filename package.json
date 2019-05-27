@@ -10,6 +10,8 @@
 		"prettier": "1.16.4"
 	},
 	"scripts": {
+		"build": "lerna run build",
+		"deploy": "lerna run deploy",
 		"format": "prettier --write '.*.js' 'packages/*/src/**/*.js'",
 		"lerna": "npm install && lerna bootstrap",
 		"lint": "npm run lint-sources && npm run lint-imports",
