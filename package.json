@@ -1,0 +1,10 @@
+{
+	"name": "liferay-js-toolkit-showcase",
+	"private": true,
+	"devDependencies": {
+		"lerna": "^3.14.1"
+	},
+	"scripts": {
+		"lerna": "npm install && lerna bootstrap"
+	}
+}
