@@ -6,5 +6,5 @@
 			"web-context": "/react-provider"
 		}		
 	},
-	"dump-report": true
+	"dump-report": false
 }
