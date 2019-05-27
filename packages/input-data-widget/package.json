@@ -14,10 +14,6 @@
 		"babel-preset-react": "6.24.1",
 		"babel-loader": "7.1.5"
 	},
-	"dependencies": {
-		"react": "16.8.6",
-		"react-dom": "16.8.6"
-	},
 	"scripts": {
 		"build": "babel --source-maps -d build src && npm run copy-assets && liferay-npm-bundler",
 		"copy-assets": "lnbs-copy-assets",
