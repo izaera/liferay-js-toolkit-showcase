@@ -1,4 +1,12 @@
 {
+	"config": {
+		"imports": {
+			"redux-provider": {
+				"redux": "4.0.1",
+				"redux-actions": "2.6.5"
+			}
+		}
+	},
 	"create-jar": {
 		"output-dir": "dist",
 		"features": {
