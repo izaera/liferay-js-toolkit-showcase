@@ -6,12 +6,14 @@
 		"eslint-config-liferay": "^3.0.0",
 		"eslint-plugin-react": "^7.13.0",
 		"lerna": "^3.14.1",
+		"liferay-npm-imports-checker": "^2.8.0",
 		"prettier": "1.16.4"
 	},
 	"scripts": {
 		"format": "prettier --write '.*.js' 'packages/*/src/**/*.js'",
 		"lerna": "npm install && lerna bootstrap",
-		"lint": "npm run lint-sources",
-		"lint-sources": "eslint 'packages/*/src/*.js' 'packages/*/src/**/*.js'"
+		"lint": "npm run lint-sources && npm run lint-imports",
+		"lint-sources": "eslint 'packages/*/src/*.js' 'packages/*/src/**/*.js'",
+		"lint-imports": "liferay-npm-imports-checker"
 	}
 }
