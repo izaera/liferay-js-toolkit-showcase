@@ -1,0 +1,11 @@
+{
+	"$schema": "https://raw.githubusercontent.com/liferay/liferay-js-toolkit/master/resources/schemas/configuration.schema.json",
+	"system": {
+		"category": "input-data-widget",
+		"name": "input-data-widget",
+		"fields": {}
+	},
+	"portletInstance": {
+		"fields": {}
+	}
+}
