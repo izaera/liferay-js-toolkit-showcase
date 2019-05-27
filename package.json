@@ -2,11 +2,16 @@
 	"name": "liferay-js-toolkit-showcase",
 	"private": true,
 	"devDependencies": {
+		"eslint": "^5.15.1",
+		"eslint-config-liferay": "^3.0.0",
+		"eslint-plugin-react": "^7.13.0",
 		"lerna": "^3.14.1",
 		"prettier": "1.16.4"
 	},
 	"scripts": {
 		"format": "prettier --write '.*.js' 'packages/*/src/**/*.js'",
-		"lerna": "npm install && lerna bootstrap"
+		"lerna": "npm install && lerna bootstrap",
+		"lint": "npm run lint-sources",
+		"lint-sources": "eslint 'packages/*/src/*.js' 'packages/*/src/**/*.js'"
 	}
 }
