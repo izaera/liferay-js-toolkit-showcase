@@ -2,9 +2,11 @@
 	"name": "liferay-js-toolkit-showcase",
 	"private": true,
 	"devDependencies": {
-		"lerna": "^3.14.1"
+		"lerna": "^3.14.1",
+		"prettier": "1.16.4"
 	},
 	"scripts": {
+		"format": "prettier --write '.*.js' 'packages/*/src/**/*.js'",
 		"lerna": "npm install && lerna bootstrap"
 	}
 }
