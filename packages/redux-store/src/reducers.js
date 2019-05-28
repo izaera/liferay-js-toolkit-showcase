@@ -1,9 +1,14 @@
+import Papa from 'papaparse';
 import {handleActions} from 'redux-actions';
 
 import initialState from './initialState';
 
 export default handleActions(
 	{
+		LOAD_FORM_DATA: state =>
+			merge(state, {
+				data: parseFormData(state.formData),
+			}),
 		RESET_DATA: state =>
 			merge(state, {
 				data: {
@@ -37,4 +42,70 @@ function merge(target, ...objects) {
 	} else {
 		return Object.assign({}, target, ...objects);
 	}
+}
+
+/**
+ * Parse a CSV string to convert it into the data field format of the Redux
+ * store.
+ * @param {string} csvData
+ */
+function parseFormData(csvData) {
+	const measureTypeMap = {
+		'Body Fat': 'fat',
+		'Body Muscle': 'muscle',
+		Bodyweight: 'weight',
+		'Visceral Fat': 'visceralFat',
+	};
+
+	const bodyMeasures = {
+		fat: [],
+		muscle: [],
+		visceralFat: [],
+		weight: [],
+	};
+
+	const csv = Papa.parse(csvData, {
+		header: true,
+	});
+
+	csv.data.forEach(record => {
+		try {
+			const type = record['Measurement'];
+
+			if (type === undefined || type === '') {
+				return;
+			}
+
+			const date = record['Date'].split('-');
+			const time = record['Time'].split(':');
+
+			const measureType = measureTypeMap[type];
+
+			if (measureType === undefined) {
+				return;
+			}
+
+			bodyMeasures[measureType].push({
+				date: new Date(
+					Date.UTC(
+						date[0],
+						date[1] - 1,
+						date[2],
+						time[0],
+						time[1],
+						time[2]
+					)
+				),
+				value: parseFloat(record['Value']),
+			});
+		} catch (err) {
+			console.error('Invalid record found:', record);
+		}
+	});
+
+	Object.keys(bodyMeasures).forEach(measureType =>
+		bodyMeasures[measureType].sort((a, b) => a.date.time - b.date.time)
+	);
+
+	return bodyMeasures;
 }
