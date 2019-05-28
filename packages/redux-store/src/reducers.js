@@ -4,6 +4,15 @@ import initialState from './initialState';
 
 export default handleActions(
 	{
+		RESET_DATA: state =>
+			merge(state, {
+				data: {
+					fat: [],
+					muscle: [],
+					visceralFat: [],
+					weight: [],
+				},
+			}),
 		SET_FORM_DATA: (state, {payload: {csv}}) =>
 			merge(state, {
 				formData: csv,
