@@ -9,6 +9,10 @@ export default handleActions(
 			merge(state, {
 				data: parseFormData(state.formData),
 			}),
+		MERGE_DISPLAY: (state, {payload: {display}}) =>
+			merge(state, {
+				display: merge(state.display, display),
+			}),
 		RESET_DATA: state =>
 			merge(state, {
 				data: {
