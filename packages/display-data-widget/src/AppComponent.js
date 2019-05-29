@@ -2,8 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {Provider} from 'react-redux';
 import store from 'redux-store';
+import actions from 'redux-store/actions';
 
 const AppComponent = ({configuration}) => {
+	store.dispatch(
+		actions.mergeDisplay({
+			measureType: configuration.system.measureType || 'fat',
+			period: configuration.system.period || '1m',
+		})
+	);
+
 	return (
 		<div>
 			<Provider store={store}>
