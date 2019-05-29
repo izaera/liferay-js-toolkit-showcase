@@ -2,6 +2,9 @@
 	"name": "display-data-widget",
 	"version": "1.0.0",
 	"description": "Display Data Widget",
+	"dependencies": {
+		"simple-statistics": "^7.0.2"
+	},
 	"devDependencies": {
 		"liferay-npm-bundler": "^2.8.0",
 		"liferay-npm-build-support": "^2.8.0",
