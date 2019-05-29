@@ -4,6 +4,8 @@ import {Provider} from 'react-redux';
 import store from 'redux-store';
 import actions from 'redux-store/actions';
 
+import BodyDataLoader from './BodyDataLoader';
+
 const AppComponent = ({configuration}) => {
 	const initialCsv = configuration.portletInstance.initialCsv.replace(
 		/\|/g,
@@ -15,7 +17,7 @@ const AppComponent = ({configuration}) => {
 	return (
 		<div>
 			<Provider store={store}>
-				<div />
+				<BodyDataLoader />
 			</Provider>
 		</div>
 	);
