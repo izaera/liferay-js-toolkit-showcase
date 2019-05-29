@@ -4,6 +4,8 @@ import {Provider} from 'react-redux';
 import store from 'redux-store';
 import actions from 'redux-store/actions';
 
+import BodyTrackerAnalysis from './BodyTrackerAnalysis';
+
 const AppComponent = ({configuration}) => {
 	store.dispatch(
 		actions.mergeDisplay({
@@ -15,7 +17,7 @@ const AppComponent = ({configuration}) => {
 	return (
 		<div>
 			<Provider store={store}>
-				<div />
+				<BodyTrackerAnalysis />
 			</Provider>
 		</div>
 	);
