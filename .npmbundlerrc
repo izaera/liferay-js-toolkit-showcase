@@ -1,4 +1,114 @@
 {
+  "exclude": {
+    "@emotion/hash": ["src/**"],
+    "jss": ["src/**"],
+    "jss-plugin-camel-case": ["src/**"],
+    "jss-plugin-default-unit": ["src/**"],
+    "jss-plugin-global": ["src/**"],
+    "jss-plugin-nested": ["src/**"],
+    "jss-plugin-props-sort": ["src/**"],
+    "jss-plugin-rule-value-function": ["src/**"],
+    "jss-plugin-vendor-prefixer": ["src/**"],
+    "tiny-warning": ["src/**"]
+  },
+  "packages": {
+    "jss": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-global": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-rule-value-function": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-camel-case": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-nested": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-vendor-prefixer": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-default-unit": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    },
+    "jss-plugin-props-sort": {
+      "copy-plugins": ["exclude-imports"],
+      "plugins": [],
+      ".babelrc": {
+        "presets": ["liferay-standard"]
+      },
+      "post-plugins": [
+        "namespace-packages",
+        "inject-imports-dependencies",
+        "inject-peer-dependencies"
+      ]
+    }
+  },
   "create-jar": {
     "output-dir": "dist",
     "features": {
