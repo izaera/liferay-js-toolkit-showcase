@@ -1,0 +1,30 @@
+{
+  "sources": ["src", "assets"],
+  "rules": [
+    {
+      "test": "^assets/",
+      "exclude": "node_modules",
+      "use": ["copy-loader"]
+    },
+    {
+      "test": "\\.js$",
+      "exclude": "node_modules",
+      "use": [
+        {
+          "loader": "babel-loader",
+          "options": {
+            "presets": ["env", "react"]
+          }
+        }
+      ]
+    }
+  ],
+  "create-jar": {
+    "output-dir": "dist",
+    "features": {
+      "js-extender": true,
+      "web-context": "/liferay-js-toolkit-showcase"
+    }
+  },
+  "dump-report": true
+}
