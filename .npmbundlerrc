@@ -1,4 +1,12 @@
 {
+  "sources": ["src"],
+  "rules": [
+    {
+      "test": "\\.css$",
+      "include": "node_modules",
+      "use": ["style-loader"]
+    }
+  ],
   "create-jar": {
     "output-dir": "dist",
     "features": {
