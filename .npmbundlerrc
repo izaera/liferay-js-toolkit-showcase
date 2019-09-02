@@ -1,0 +1,10 @@
+{
+  "create-jar": {
+    "output-dir": "dist",
+    "features": {
+      "js-extender": true,
+      "web-context": "/liferay-js-toolkit-showcase"
+    }
+  },
+  "dump-report": true
+}
