@@ -2,6 +2,11 @@
   "sources": ["src", "assets"],
   "rules": [
     {
+      "test": "\\.json$",
+      "exclude": "node_modules",
+      "use": ["json-loader"]
+    },
+    {
       "test": "\\.scss$",
       "exclude": "node_modules",
       "use": ["sass-loader", "css-loader"]
